@@ -34,7 +34,33 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <my.value>xxx.yyy.zzz</my.value>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <my.value>aaa.bbb.ccc</my.value>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
+        <!-- <finalName>myweb</finalName> -->
+        <resources>
+            <resource>
+                <filtering>true</filtering>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
