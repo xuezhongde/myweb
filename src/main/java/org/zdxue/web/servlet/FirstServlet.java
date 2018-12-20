@@ -37,6 +37,8 @@ public class FirstServlet extends HttpServlet {
     public void handleRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         System.out.println("FirstServlet::handleRequest...");
 
+        System.out.println("isSecure: " + req.isSecure());
+        System.out.println("Scheme: " + req.getScheme());
         System.out.println("ServletPath: " + req.getServletPath());
         System.out.println("ContextPath: " + req.getContextPath());
         System.out.println("PathInfo: " + req.getPathInfo());
