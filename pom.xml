@@ -4,9 +4,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.zdxue.xxx</groupId>
-    <artifactId>myweb</artifactId>
+    <artifactId>myweb-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>pom</packaging>
 
     <name>myweb</name>
     <description>based on maven.</description>
@@ -25,62 +25,9 @@
         </repository>
     </repositories>
 
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${servlet.version}</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
-    <profiles>
-        <profile>
-            <id>dev</id>
-            <properties>
-                <my.value>xxx.yyy.zzz</my.value>
-            </properties>
-        </profile>
-        <profile>
-            <id>test</id>
-            <properties>
-                <my.value>aaa.bbb.ccc</my.value>
-            </properties>
-        </profile>
-    </profiles>
-
-    <build>
-        <!-- <finalName>myweb</finalName> -->
-        <resources>
-            <resource>
-                <filtering>true</filtering>
-                <directory>src/main/resources</directory>
-                <includes>
-                    <include>**/*.properties</include>
-                </includes>
-            </resource>
-        </resources>
-
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.5.4</version>
-                <configuration>
-                    <descriptors>
-                        <descriptor>assembly.xml</descriptor>
-                    </descriptors>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>web-application</module>
+        <module>xxx-web</module>
+    </modules>
 
 </project>
